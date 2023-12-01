@@ -1,18 +1,27 @@
-file = open('C:/advent2023/day1/d1_p1_test', 'r')
+file = open('C:/advent2023/day1/part2/d1_p2_test', 'r')
 lines = file.readlines()
 file.close()
 
 lookup = {
-    'one' : '1',
-    'two' : '2',
-    'three' : '3',
-    'four' : '4',
-    'five' : '5',
-    'six' : '6',
-    'seven' : '7',
-    'eight' : '8',
-    'nine' : '9'
+    'one' : 'o1e',
+    'two' : 't2o',
+    'three' : 't3e',
+    'four' : 'f4r',
+    'five' : 'f5e',
+    'six' : 's6x',
+    'seven' : 's7n',
+    'eight' : 'e8t',
+    'nine' : 'n9e'
 }
+
+for key, key_value in lookup.items():
+    for index, line in enumerate(lines):
+        print(index)
+        lines[index] = line.replace(key, key_value)
+        index = index + 1
+          
+print(lines)
+
 
 precalibrationvalues = []
 
@@ -37,7 +46,7 @@ for value in precalibrationvalues:
 for c in calibrationvalues:
     sum = sum + int(c)
 
-#print(precalibrationvalues)
-#print(calibrationvalues)
+print(precalibrationvalues)
+print(calibrationvalues)
 print(sum)
 
