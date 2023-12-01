@@ -8,9 +8,7 @@ def sum_calibration_values(document):
     # Function to sum all calibration values in the document
     total = 0
     for line in document:
-        print(line)
         calibration_value = extract_calibration_value(line)
-        print(calibration_value)
         total += calibration_value
     return total
 
