@@ -20,9 +20,6 @@ for key, key_value in lookup.items():
         lines[index] = line.replace(key, key_value)
         index = index + 1
           
-print(lines)
-
-
 precalibrationvalues = []
 
 calibrationvalues = []
@@ -46,7 +43,5 @@ for value in precalibrationvalues:
 for c in calibrationvalues:
     sum = sum + int(c)
 
-print(precalibrationvalues)
-print(calibrationvalues)
 print(sum)
 
