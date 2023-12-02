@@ -46,4 +46,4 @@ for game in games:
 
 print(sum)
 
-print(*games, sep='\n')
+#print(*games, sep='\n')
