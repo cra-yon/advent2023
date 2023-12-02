@@ -1,3 +1,4 @@
-file = open("C:/advent2023/day1/part2/d1_p2_test", "r")
-lines = file.readlines()
+file = open("day2/part1/d2_p1_pretest", "r")
+lines = file.read().splitlines()
 file.close()
+

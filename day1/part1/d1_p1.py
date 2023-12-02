@@ -1,4 +1,4 @@
-file = open("C:/advent2023/day1/d1_p1_test", "r")
+file = open("day1/part1/d1_p1_test", "r")
 lines = file.readlines()
 file.close()
 
