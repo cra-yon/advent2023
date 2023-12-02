@@ -1,12 +1,6 @@
 file = open("day2/part1/d2_p1_test", "r")
 lines = file.read().splitlines()
 file.close()
-# print(lines)
-
-#create game object - nevermind maybe a dictionary
-#initialize r, g, b
-#create a function to create a list of objects
-#set object r, g, b to highest value associated with each value, rest don't matter
 
 games = []
 sum = 0
