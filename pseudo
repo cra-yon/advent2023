@@ -1,0 +1,12 @@
+read into matrix
+
+read through matrix and find whole numbers
+
+scan the area for instances of symbols within radius
+
+or find symbols and instances of numbers
+
+def withinbounds
+
+def issymbol
+    return char in {symbols}
