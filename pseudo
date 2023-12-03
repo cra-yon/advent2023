@@ -1,5 +1,6 @@
 read into matrix
 
+
 read through matrix and find whole numbers
 
 scan the area for instances of symbols within radius
@@ -10,3 +11,7 @@ def withinbounds
 
 def issymbol
     return char in {symbols}
+    def ispartnumber
+
+    return true for any instance of symbol within radius
+    pass in list of coord
