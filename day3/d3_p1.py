@@ -22,8 +22,6 @@ def getsymbolcoords(matrix):
                 for xc in range(-1,2):
                     for yc in range(-1,2):
                         if(validcoord(x + xc, y + yc)):
-                            # print('x : ' + str(x + xc))
-                            # print('y : ' + str(y + yc))
                             coordlist.append((x + xc, y + yc))
     return coordlist
 
@@ -55,7 +53,6 @@ def validcoord(x ,y):
 
 
 generatematrix(data)
-
 numbercoords = generatenumbers(charlistlist)
 adjsymbolcoords = getsymbolcoords(charlistlist)
 
@@ -67,9 +64,4 @@ for number in numbercoords:
             numbersadjsymbols.append(int(number[0]))
             break
 
-sum = 0
-
-for num in numbersadjsymbols:
-    sum = sum + num
-
-print(sum)
+print(sum(numbersadjsymbols))
