@@ -49,6 +49,7 @@ def isadjsymbolcoord(x, y):
 
 # def generatesum(list):
 
+#this checks if a coordinate is in the bounds of the matrix
 def validcoord(x ,y):
     return x <= len(charlistlist) and y <= len(charlistlist[0])
 
