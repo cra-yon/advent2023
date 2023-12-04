@@ -3,12 +3,21 @@ data = file.read().splitlines()
 file.close()
 
 charlistlist = []
+numbercoords = []
+isadjsymbolcoords = []
 
 def generatematrix(lines):
-    for x, line in enumerate(lines):
+    for line in lines:
         charlistlist.append(list(line))
 
-# def getnumcoords(matrix):
+def getnumcoords(matrix):
+    coordlist = []
+    for x, xitem in enumerate(matrix):
+        for y, yitem in enumerate(matrix[x]):
+            if yitem.isnumeric():
+                coordlist.append({x, y})
+    return coordlist
+
 
 # def getsymbolcoords(matrix):
 
@@ -21,3 +30,7 @@ def generatematrix(lines):
 generatematrix(data)
 
 print(charlistlist)
+
+numbercoords = getnumcoords(charlistlist)
+
+print(numbercoords)
