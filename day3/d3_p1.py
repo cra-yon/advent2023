@@ -1,4 +1,4 @@
-file = open("day3/d3_p1_test", "r")
+file = open("d3_p1_test", "r")
 data = file.read().splitlines()
 file.close()
 
@@ -35,13 +35,15 @@ def generatenumbers(matrix):
         for y, yitem in enumerate(matrix[x]):
             if yitem.isnumeric():
                 tempnum = tempnum + yitem
-                #print(tempnum)
                 coordlist.append((x, y))
             else:
                 if tempnum != '':
                     numlist.append((tempnum, coordlist))
                     tempnum = ''
                     coordlist = []
+        #THIS FUCKING PIECE OF SHIT RIGHT HERE OH MY GOD
+        if tempnum != '':
+            numlist.append((tempnum, coordlist))
     return numlist
             
 def isadjsymbolcoord(x, y):
@@ -62,14 +64,12 @@ numbersadjsymbols = []
 for number in numbercoords:
     for coord in number[1]:
         if isadjsymbolcoord(coord[0], coord[1]):
-            numbersadjsymbols.append(number[0])
+            numbersadjsymbols.append(int(number[0]))
             break
-
-print(numbersadjsymbols)
 
 sum = 0
 
 for num in numbersadjsymbols:
-    sum = sum + int(num)
+    sum = sum + num
 
 print(sum)
