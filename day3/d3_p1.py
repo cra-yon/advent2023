@@ -34,10 +34,8 @@ def get_numbers(matrix):
 def is_adj_symbol_coord(x, y):
     return (x, y) in adj_symbol_coords
 
-#this checks if a coordinate is in the bounds of the matrix
 def is_valid_coord(x ,y):
     return x <= len(charlistlist) and y <= len(charlistlist[0])
-
 
 init_matrix(data)
 number_coords = get_numbers(charlistlist)
