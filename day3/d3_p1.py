@@ -1,4 +1,4 @@
-file = open("day3/d3_p1_test", "r")
+file = open("day3/d3_p1_pretest", "r")
 data = file.read().splitlines()
 file.close()
 
@@ -17,7 +17,7 @@ def getnumcoords(matrix):
     for x, xitem in enumerate(matrix):
         for y, yitem in enumerate(matrix[x]):
             if yitem.isnumeric():
-                coordlist.append({x, y})
+                coordlist.append((x, y))
     return coordlist
 
 #this returns a list of {x,y} pairs for any valid adjacent symbol coordinate
@@ -31,7 +31,9 @@ def getsymbolcoords(matrix):
                 for xc in range(-1,2):
                     for yc in range(-1,2):
                         if(validcoord(x + xc, y + yc)):
-                            coordlist.append({x + xc, y + yc})
+                            print('x : ' + str(x + xc))
+                            print('y : ' + str(y + yc))
+                            coordlist.append((x + xc, y + yc))
     return coordlist
 
 #this is not complete
