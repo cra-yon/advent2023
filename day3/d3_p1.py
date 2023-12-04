@@ -27,11 +27,10 @@ def generatenumbers(matrix):
             if yitem.isnumeric():
                 tempnum = tempnum + yitem
                 coordlist.append((x, y))
-            else:
-                if tempnum != '':
-                    numlist.append((tempnum, coordlist))
-                    tempnum, coordlist = '', []
-        if tempnum != '':
+            elif tempnum:
+                numlist.append((tempnum, coordlist))
+                tempnum, coordlist = '', []
+        if tempnum:
             numlist.append((tempnum, coordlist))
     return numlist
             
