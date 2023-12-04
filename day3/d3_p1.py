@@ -2,7 +2,7 @@ file = open("d3_p1_test", "r")
 data = file.read().splitlines()
 file.close()
 
-charlistlist, numbercoords, adjsymbolcoords = [], [], []
+charlistlist, number_coords, adj_symbol_coords = [], [], []
 
 def init_matrix(lines):
     for line in lines:
@@ -32,7 +32,7 @@ def get_numbers(matrix):
     return numlist
             
 def is_adj_symbol_coord(x, y):
-    return (x, y) in adjsymbolcoords
+    return (x, y) in adj_symbol_coords
 
 #this checks if a coordinate is in the bounds of the matrix
 def is_valid_coord(x ,y):
@@ -40,15 +40,15 @@ def is_valid_coord(x ,y):
 
 
 init_matrix(data)
-numbercoords = get_numbers(charlistlist)
-adjsymbolcoords = get_symbol_coords(charlistlist)
+number_coords = get_numbers(charlistlist)
+adj_symbol_coords = get_symbol_coords(charlistlist)
 
-numbersadjsymbols = []
+numbers_adj_symbols = []
 
-for number in numbercoords:
+for number in number_coords:
     for coord in number[1]:
         if is_adj_symbol_coord(coord[0], coord[1]):
-            numbersadjsymbols.append(int(number[0]))
+            numbers_adj_symbols.append(int(number[0]))
             break
 
-print(sum(numbersadjsymbols))
+print(sum(numbers_adj_symbols))
