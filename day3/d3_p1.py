@@ -13,10 +13,7 @@ def getsymbolcoords(matrix):
     for x, xitem in enumerate(matrix):
         for y, yitem in enumerate(matrix[x]):
             if not yitem.isnumeric() and not yitem == '.':
-                for xc in range(-1,2):
-                    for yc in range(-1,2):
-                        if(validcoord(x + xc, y + yc)):
-                            coordlist.append((x + xc, y + yc))
+                coordlist.extend((x + xc, y + yc) for xc in range(-1, 2) for yc in range(-1, 2) if validcoord(x + xc, y + yc))
     return coordlist
 
 def generatenumbers(matrix):
