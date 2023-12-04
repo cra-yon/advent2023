@@ -2,23 +2,17 @@ file = open("d3_p1_test", "r")
 data = file.read().splitlines()
 file.close()
 
-charlistlist = []
-numbercoords = []
-adjsymbolcoords = []
+charlistlist, numbercoords, adjsymbolcoords = [], [], []
 
-#putting all characters from file into a matrix
 def generatematrix(lines):
     for line in lines:
         charlistlist.append(list(line))
 
-#this returns a list of {x,y} pairs for any valid adjacent symbol coordinate
 def getsymbolcoords(matrix):
     coordlist = []
     for x, xitem in enumerate(matrix):
         for y, yitem in enumerate(matrix[x]):
-            #if char is not  number or a '.' 
             if not yitem.isnumeric() and not yitem == '.':
-                # get all x-1 x x+1, y-1 y y+1 coordinate
                 for xc in range(-1,2):
                     for yc in range(-1,2):
                         if(validcoord(x + xc, y + yc)):
@@ -28,8 +22,7 @@ def getsymbolcoords(matrix):
 def generatenumbers(matrix):
     numlist = []
     for x, xitem in enumerate(matrix):
-        tempnum = ''
-        coordlist = []
+        tempnum, coordlist = '', []
         for y, yitem in enumerate(matrix[x]):
             if yitem.isnumeric():
                 tempnum = tempnum + yitem
@@ -37,9 +30,7 @@ def generatenumbers(matrix):
             else:
                 if tempnum != '':
                     numlist.append((tempnum, coordlist))
-                    tempnum = ''
-                    coordlist = []
-        #THIS FUCKING PIECE OF SHIT RIGHT HERE OH MY GOD
+                    tempnum, coordlist = '', []
         if tempnum != '':
             numlist.append((tempnum, coordlist))
     return numlist
